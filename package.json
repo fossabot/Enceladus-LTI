@@ -1,7 +1,6 @@
 {
   "name": "enceladus-lti",
-  "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "version": "0.1.0",
   "author": "Jacob Pratt <the.z.cuber@gmail.com>",
   "private": true,
   "scripts": {
