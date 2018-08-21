@@ -1,7 +1,7 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
+  /**
+   * Headers of the page
+   */
   head: {
     title: 'Enceladus',
     meta: [
@@ -50,22 +50,22 @@ module.exports = {
         rel: 'mask-icon',
         href: '/favicon/safari-pinned-tab.svg',
         color: '#ff5100',
-      }
-    ]
+      },
+    ],
   },
 
-  /*
-  ** Customize the progress bar color
-  */
+  /**
+   * Customize the progress bar color
+   */
   loading: false,
 
-  /*
-  ** Build configuration
-  */
+  /**
+   * Build configuration
+   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
+    /**
+     * Run ESLint on save
+     */
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -75,7 +75,52 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
-}
+    },
 
+    /**
+     * JavaScript extensions
+     */
+    babel: {
+      plugins: [
+        'babel-plugin-transform-object-rest-spread',
+        'babel-plugin-transform-class-properties',
+        'babel-plugin-transform-decorators',
+        'babel-plugin-transform-export-extensions',
+        'babel-plugin-transform-do-expressions',
+        ['babel-plugin-transform-pipeline-operator', { proposal: 'minimal' }],
+
+        'babel-plugin-transform-inline-consecutive-adds',
+        'babel-plugin-minify-constant-folding',
+        'babel-plugin-minify-numeric-literals',
+        'babel-plugin-transform-merge-sibling-variables',
+        'babel-plugin-closure-elimination',
+      ]
+    },
+
+    postcss: [
+      require('postcss-preset-env')({
+        stage: 2,
+        features: {
+          'nesting-rules': true,
+          'color-functional-notation': true,
+        },
+      }),
+      require('postcss-time-machine')({ 'box-sizing': false }),
+      require('postcss-short')({
+        /**
+         * only enabled are:
+         * - size
+         * - margin/padding
+         * - overflow
+         * - border-radius
+         */
+        border: { disable: true },
+        color: { disable: true },
+        'font-size': { disable: true },
+        position: { disable: true },
+        'font-weight': { disable: true },
+      }),
+      require('postcss-calc')(),
+    ],
+  },
+};
