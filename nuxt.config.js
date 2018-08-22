@@ -84,7 +84,7 @@ module.exports = {
       plugins: [
         'babel-plugin-transform-object-rest-spread',
         'babel-plugin-transform-class-properties',
-        'babel-plugin-transform-decorators',
+        'babel-plugin-transform-decorators-legacy',
         'babel-plugin-transform-export-extensions',
         'babel-plugin-transform-do-expressions',
         ['babel-plugin-transform-pipeline-operator', { proposal: 'minimal' }],
@@ -98,6 +98,9 @@ module.exports = {
     },
 
     postcss: [
+      require('postcss-advanced-variables')({
+        disable: '@content, @each, @else, @if, @include, @import, @for, @mixin',
+      }),
       require('postcss-preset-env')({
         stage: 2,
         features: {

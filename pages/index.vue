@@ -1,65 +1,55 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        enceladus-lti
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <logo/>
+    <div class='header'/>
+    <div class='links'/>
+    <div class='youtube'/>
+    <div class='updates'/>
+    <div class='sections'/>
+    <div class='twitter'/>
+  </main>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import Logo from '~/components/Logo.vue';
 
 export default {
   components: {
-    AppLogo
+    Logo,
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+main {
+  --theme-color: lch(60 97 48);
+
+  $gap: 24px;
+  $number-columns: 3; /* how many columns is our grid? *not* how many equally-spaced columns */
+  $youtube-ratio: 2 / 4; /* what ratio is the youtube container to the whole grid? */
+
+  height: 100vh;
+  padding: $gap $gap 0;
+
+  background-color: lch(0 0 0);
+
+  display: grid;
+  gap: $gap;
+  grid-template:
+    ' logo      header   links   ' 72px
+    ' sections  youtube  twitter ' calc((100vw - $gap * ($number-columns + 1)) * $youtube-ratio * (9 / 16))
+    ' sections  updates  twitter ' auto
+    / 1fr 2fr 1fr;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+.header { grid-area: header; }
+.links { grid-area: links; }
+.youtube { grid-area: youtube; }
+.updates { grid-area: updates; }
+.sections { grid-area: sections; }
+.twitter { grid-area: twitter; }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+main > div {
+  border: 1px solid lch(100 0 0);
 }
 </style>
-
