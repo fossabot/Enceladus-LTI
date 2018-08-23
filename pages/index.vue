@@ -3,7 +3,7 @@
     <logo/>
     <x-header/>
     <div class='links'/>
-    <div class='youtube'/>
+    <youtube/>
     <div class='updates'/>
     <div class='sections'/>
     <div class='twitter'/>
@@ -12,14 +12,14 @@
 
 <script>
 import Logo from '~/components/Logo.vue';
-import Countdown from '~/components/Countdown.vue';
 import Header from '~/components/Header.vue';
+import Youtube from '~/components/YouTube.vue';
 
 export default {
   components: {
     Logo,
-    Countdown,
     'x-header': Header,
+    Youtube,
   }
 }
 </script>
@@ -62,7 +62,6 @@ main {
 }
 
 .links { grid-area: links; }
-.youtube { grid-area: youtube; }
 .updates { grid-area: updates; }
 .sections { grid-area: sections; }
 .twitter { grid-area: twitter; }

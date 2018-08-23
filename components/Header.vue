@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section>
     <span>{{ mission_name }}</span>
     <countdown/>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -13,13 +13,13 @@ import Countdown from '~/components/Countdown.vue';
 @Component({
   components: { Countdown }
 })
-export default class extends Vue {
+export default class Header extends Vue {
   mission_name = 'CRS-14';
 }
 </script>
 
 <style lang='postcss' scoped>
-div {
+section {
   grid-area: header;
 
   display: flex;
