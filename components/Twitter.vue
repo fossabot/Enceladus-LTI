@@ -6,7 +6,7 @@
       src = 'https://platform.twitter.com/widgets.js'
     />
 
-    <div>TWITTER</div>
+    <header>TWITTER</header>
 
     <!-- TODO replace link color with blue when appropriate -->
     <a
@@ -27,7 +27,7 @@ section {
   overflow: hidden scroll;
 }
 
-div {
+header {
   position: sticky;
   top: 0;
   background-color: lch(0 0 0);

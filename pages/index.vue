@@ -2,7 +2,7 @@
   <main>
     <logo/>
     <x-header/>
-    <div class='links'/>
+    <links/>
     <youtube/>
     <div class='updates'/>
     <div class='sections'/>
@@ -15,6 +15,7 @@ import Logo from '~/components/Logo.vue';
 import Header from '~/components/Header.vue';
 import Youtube from '~/components/YouTube.vue';
 import Twitter from '~/components/Twitter.vue';
+import Links from '~/components/Links.vue';
 
 export default {
   components: {
@@ -22,6 +23,7 @@ export default {
     'x-header': Header,
     Youtube,
     Twitter,
+    Links,
   }
 }
 </script>
@@ -48,6 +50,7 @@ main {
   $youtube-ratio: 2 / 4; /* what ratio is the youtube container to the whole grid? */
 
   height: 100vh;
+  max-height: 100vh;
   padding: $gap $gap 0;
 
   color: lch(100 0 0);
@@ -68,7 +71,9 @@ main {
 .updates { grid-area: updates; }
 .sections { grid-area: sections; }
 
+/*
 main > div {
   border: 1px solid lch(100 0 0);
 }
+*/
 </style>
