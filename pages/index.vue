@@ -6,7 +6,7 @@
     <youtube/>
     <div class='updates'/>
     <div class='sections'/>
-    <div class='twitter'/>
+    <twitter/>
   </main>
 </template>
 
@@ -14,12 +14,14 @@
 import Logo from '~/components/Logo.vue';
 import Header from '~/components/Header.vue';
 import Youtube from '~/components/YouTube.vue';
+import Twitter from '~/components/Twitter.vue';
 
 export default {
   components: {
     Logo,
     'x-header': Header,
     Youtube,
+    Twitter,
   }
 }
 </script>
@@ -64,7 +66,6 @@ main {
 .links { grid-area: links; }
 .updates { grid-area: updates; }
 .sections { grid-area: sections; }
-.twitter { grid-area: twitter; }
 
 main > div {
   border: 1px solid lch(100 0 0);
