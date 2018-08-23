@@ -1,9 +1,7 @@
 <template>
   <main>
     <logo/>
-    <div class='header'>
-      <countdown/>
-    </div>
+    <x-header/>
     <div class='links'/>
     <div class='youtube'/>
     <div class='updates'/>
@@ -15,11 +13,13 @@
 <script>
 import Logo from '~/components/Logo.vue';
 import Countdown from '~/components/Countdown.vue';
+import Header from '~/components/Header.vue';
 
 export default {
   components: {
     Logo,
     Countdown,
+    'x-header': Header,
   }
 }
 </script>
@@ -27,6 +27,12 @@ export default {
 <style>
 @font-face {
   font-family: 'D-DIN';
+  src:
+    url('~/fonts/woff2/D-DIN.woff2') format('woff2'),
+    url('~/fonts/woff/D-DIN.woff') format('woff');
+}
+@font-face {
+  font-family: 'D-DIN expanded';
   src:
     url('~/fonts/woff2/D-DIN-expanded.woff2') format('woff2'),
     url('~/fonts/woff/D-DIN-expanded.woff') format('woff');
@@ -60,15 +66,6 @@ main {
 .updates { grid-area: updates; }
 .sections { grid-area: sections; }
 .twitter { grid-area: twitter; }
-
-.header {
-  grid-area: header;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
 main > div {
   border: 1px solid lch(100 0 0);

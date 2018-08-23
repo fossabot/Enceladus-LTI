@@ -54,7 +54,7 @@ export default class Countdown extends Vue {
 
 <style lang='postcss' scoped>
 section {
-  color: lch(100 0 0);
-  font-size: 17px;
+  font-family: 'D-DIN expanded';
+  font-size: 24px;
 }
 </style>
