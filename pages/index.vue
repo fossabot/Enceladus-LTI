@@ -50,6 +50,7 @@ main {
   height: 100vh;
   padding: $gap $gap 0;
 
+  color: lch(100 0 0);
   background-color: lch(0 0 0);
 
   display: grid;
